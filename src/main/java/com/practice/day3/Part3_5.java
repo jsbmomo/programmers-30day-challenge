@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 
 public class Part3_5 {
 
-  public int solution(int a, int b) {
+  public static int solution(int a, int b) {
     String strA = Integer.toString(a);
     String strB = Integer.toString(b);
 

@@ -18,11 +18,7 @@ public class Part5_1 {
         continue;
       }
 
-      if (mode == 0 && i % 2 == 0) {
-        ret.append(codeToChar[i]);
-      }
-
-      if (mode == 1 && i % 2 == 1) {
+      if (i % 2 == mode) {
         ret.append(codeToChar[i]);
       }
     }

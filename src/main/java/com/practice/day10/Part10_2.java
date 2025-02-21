@@ -6,20 +6,17 @@ import java.io.InputStreamReader;
 
 public class Part10_2 {
 
-  private static String solution(String my_string, int s, int e) {
-    StringBuilder sb = new StringBuilder(my_string.substring(s, e + 1));
-    sb.reverse();
-    return my_string.substring(0,s) + sb + my_string.substring(e + 1);
+  private static int solution(String my_string, String is_prefix) {
+    return my_string.startsWith(is_prefix) ? 1 : 0;
   }
 
   public static void main(String[] args) throws IOException {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
     String my_string = br.readLine();
-    int s = Integer.parseInt(br.readLine());
-    int e = Integer.parseInt(br.readLine());
+    String is_prefix = br.readLine();
 
-    System.out.println(solution(my_string, s, e));
+    System.out.println(solution(my_string, is_prefix));
   }
 
 }

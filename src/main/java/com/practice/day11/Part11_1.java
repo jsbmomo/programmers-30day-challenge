@@ -7,24 +7,23 @@ import java.util.Arrays;
 
 public class Part11_1 {
 
-  private static int[] solution(int n, int k) {
-    int count = n / k;
-    int[] values = new int[count];
+  private static int[] solution(String my_string) {
+    char[] alpha = my_string.toCharArray();
+    int[] answer = new int[52];
 
-    for (int i = 1; i <= count; i++)
-      values[i - 1] = i * 3;
+    for (char c : alpha) {
+      int index = c < 'a' ? c - 65 : (c - 97) + 26;
+      answer[index]++;
+    }
 
-    return values;
+    return answer;
   }
 
 
   public static void main(String[] args) throws IOException {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-    int n = Integer.parseInt(br.readLine());
-    int k = Integer.parseInt(br.readLine());
-
-    Arrays.stream(solution(n, k)).forEach(num -> System.out.print(num + ", "));
+    Arrays.stream(solution(br.readLine())).forEach(num -> System.out.print(num + ", "));
 
     br.close();
   }

@@ -3,37 +3,27 @@ package com.practice.day11;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 
 public class Part11_2 {
 
-  private static String solution(String my_string, int[] indices) {
-    StringBuilder sb = new StringBuilder();
+  private static int[] solution(int n, int k) {
+    int count = n / k;
+    int[] values = new int[count];
 
-    for (int i = 0; i < my_string.length(); i++) {
-      boolean isContain = false;
+    for (int i = 1; i <= count; i++)
+      values[i - 1] = i * 3;
 
-      for (int index : indices) {
-        if (index == i) {
-          isContain = true;
-          break;
-        }
-      }
-
-      if (!isContain)
-        sb.append(my_string.charAt(i));
-    }
-
-    return sb.toString();
+    return values;
   }
-
 
   public static void main(String[] args) throws IOException {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-    String my_string = "apporoograpemmemprs";
-    int[] indices = { 1, 16, 6, 15, 0, 10, 11, 3 };
+    int n = Integer.parseInt(br.readLine());
+    int k = Integer.parseInt(br.readLine());
 
-    System.out.println(solution(my_string, indices));
+    Arrays.stream(solution(n, k)).forEach(num -> System.out.print(num + ", "));
 
     br.close();
   }

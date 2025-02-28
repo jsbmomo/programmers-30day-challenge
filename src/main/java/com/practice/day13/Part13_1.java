@@ -1,7 +1,6 @@
 package com.practice.day13;
 
 import java.util.Arrays;
-import java.util.stream.IntStream;
 
 public class Part13_1 {
 

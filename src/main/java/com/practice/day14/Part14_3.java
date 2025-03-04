@@ -17,6 +17,16 @@ public class Part14_3 {
       }
     }
 
+    /* 참고(로직 개선)
+    StringBuilder str = new StringBuilder();
+
+    for (int i = 0; i < finished.length; i++) {
+      str.append(!finished[i] ? "," + todo_list[i] : "");
+    }
+
+    return str.toString().split(",");
+    */
+
     return answer.stream().toArray(String[]::new);
   }
 

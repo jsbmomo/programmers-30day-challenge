@@ -5,23 +5,21 @@ import java.util.Arrays;
 public class Part15_4 {
 
   private static int solution(int[] num_list) {
-    if (num_list.length >= 11) {
-      int sum = 0;
+    int result = num_list.length >= 11 ? 0 : 1;
 
+    if (num_list.length >= 11) {
       for (int num : num_list) {
-        sum += num;
+        result += num;
       }
 
-      return sum;
+      return result;
     }
-
-    int multiple = 1;
 
     for (int num : num_list) {
-      multiple *= num;
+      result *= num;
     }
 
-    return multiple;
+    return result;
   }
 
   public static void main(String[] args) {

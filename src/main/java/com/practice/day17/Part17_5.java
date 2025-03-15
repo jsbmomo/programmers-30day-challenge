@@ -15,7 +15,6 @@ public class Part17_5 {
 
     return answer.toArray(new String[0]);
 
-
     // 정규식 사용 시.
     // my_string.trim().split("[ ]+"); // or split("\\s+")
   }

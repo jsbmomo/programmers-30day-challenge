@@ -17,7 +17,7 @@ public class Part19_5 {
     }
 
     if (answer.size() < k) {
-      for (int i = answer.size() - 1; i < k; i++) {
+      for (int i = answer.size(); i < k; i++) {
         answer.add(-1);
       }
     }
@@ -26,8 +26,8 @@ public class Part19_5 {
   }
 
   public static void main(String[] args) {
-    int[] arr = new int[] { 0, 1, 1, 2, 2, 3 };
-    int k = 3;
+    int[] arr = new int[] { 0, 1, 1, 1, 1 };
+    int k = 4;
 
     Arrays.stream(solution(arr, k)).forEach(System.out::println);
   }

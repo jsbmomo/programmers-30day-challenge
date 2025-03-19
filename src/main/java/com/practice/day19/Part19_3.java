@@ -1,5 +1,6 @@
 package com.practice.day19;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Stack;
@@ -7,30 +8,25 @@ import java.util.Stack;
 public class Part19_3 {
 
   private static int[] solution(int[] arr, boolean[] flag) {
-    Stack<Integer> stack = new Stack<>();
+    ArrayList<Integer> list = new ArrayList<>();
 
     for (int i = 0; i < arr.length; i++) {
       if (flag[i]) {
-        int max = arr[i] * 2;
-
-        for (int j = 0; j < max; j++) {
-          stack.add(arr[i]);
+        for (int j = 0; j < arr[i] * 2; j++) {
+          list.add(arr[i]);
         }
-        continue;
+        continue;;
       }
 
       for (int j = 0; j < arr[i]; j++) {
-        stack.pop();
+        list.remove(list.size() - 1);
       }
     }
 
-    Collections.reverse(stack);
+    int[] answer = new int[list.size()];
 
-    int size = stack.size();
-    int[] answer = new int[size];
-
-    for (int i = 0; i < size; i++) {
-      answer[i] = stack.pop();
+    for (int i = 0; i < list.size(); i++) {
+      answer[i] = list.get(i);
     }
 
     return answer;

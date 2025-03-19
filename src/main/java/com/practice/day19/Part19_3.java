@@ -2,8 +2,6 @@ package com.practice.day19;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.Stack;
 
 public class Part19_3 {
 
@@ -15,7 +13,7 @@ public class Part19_3 {
         for (int j = 0; j < arr[i] * 2; j++) {
           list.add(arr[i]);
         }
-        continue;;
+        continue;
       }
 
       for (int j = 0; j < arr[i]; j++) {

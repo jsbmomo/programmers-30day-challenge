@@ -1,24 +1,17 @@
 package com.practice.day20;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Arrays;
 
 public class Part20_3 {
 
   private static int solution(String[] arr) {
-    Map<Integer, Integer> answer = new HashMap<>();
+    int[] length = new int[30];
 
     for (String str : arr) {
-      if (answer.get(str.length()) == null) {
-        answer.put(str.length(), 1);
-        continue;
-      }
-
-      answer.put(str.length(), answer.get(str.length()) + 1);
+      length[str.length()]++;
     }
 
-    return Collections.max(answer.values());
+    return Arrays.stream(length).max().getAsInt();
   }
 
   public static void main(String[] args) {
